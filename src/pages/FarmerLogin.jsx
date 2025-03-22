@@ -6,11 +6,7 @@ function FarmerLogin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
     // Simulate successful login and redirect to the dashboard
-=======
-    // Auth logic here
->>>>>>> f97689c8d221b961df4b431a36c3490332ec9a84
     navigate("/farmer-dashboard");
   };
 
