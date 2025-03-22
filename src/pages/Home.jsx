@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ColumnsWithIcons from "./ColumnsWithIcons";
 
 function Home() {
   return (
@@ -35,6 +36,8 @@ function Home() {
         </div>
       </section>
 
+      <ColumnsWithIcons />
+    
       {/* Key Features */}
       <section className="info-section alternate-bg">
         <div className="container">
@@ -49,7 +52,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Who Can Use It */}
+      {/* Who Can Use It? */}
       <section className="info-section">
         <div className="container">
           <h2>Who Can Use It?</h2>
