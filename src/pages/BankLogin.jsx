@@ -6,15 +6,15 @@ function BankLogin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Auth logic here
+    // Simulate successful login and redirect to the bank dashboard
     navigate("/bank-dashboard");
   };
 
   return (
     <div className="page-container center-content">
-      <h2>Bank/NBFC Login</h2>
+      <h2>Bank Login</h2>
       <form onSubmit={handleLogin} className="login-form">
-        <input type="text" placeholder="Bank/NBFC ID" required />
+        <input type="text" placeholder="Username" required />
         <input type="password" placeholder="Password" required />
         <button type="submit">Login</button>
       </form>

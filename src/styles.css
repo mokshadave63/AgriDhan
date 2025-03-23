@@ -1,22 +1,23 @@
 /* -------------------------------------
    COLOR PALETTE
 ------------------------------------- */
-<<<<<<< HEAD
 @import "tailwindcss";
-=======
->>>>>>> f97689c8d221b961df4b431a36c3490332ec9a84
+
 :root {
     --color-light: #B8E3E9; /* Light */
     --color-mid: #93B1B5;   /* Medium */
     --color-dark: #4F7C82;  /* Dark */
     --color-deep: #0B2E33;  /* Deep Dark */
-  
+
     --text-color: #333;
     --white: #ffffff;
-  
+
     --max-width: 1200px;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+}
+
+/* Rest of the styles remain unchanged... */
+
   
   body {
     margin: 0;
