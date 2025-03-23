@@ -6,7 +6,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-brand">CreditEvalTool</div>
+      <div className="navbar-brand">Agriधन🌾💰</div>
 
       <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => setMenuOpen(false)}>
