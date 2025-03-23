@@ -4,10 +4,10 @@
 @import "tailwindcss";
 
 :root {
-    --color-light: #B8E3E9; /* Light */
-    --color-mid: #93B1B5;   /* Medium */
-    --color-dark: #4F7C82;  /* Dark */
-    --color-deep: #0B2E33;  /* Deep Dark */
+  --color-light: #B8E3E9; /* Light */
+  --color-mid: #93B1B5;   /* Medium */
+  --color-dark: #4F7C82;  /* Dark */
+  --color-deep: #0B2E33;  /* Deep Dark */
 
     --text-color: #333;
     --white: #ffffff;

@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 function ApplyLoan() {
   const [formData, setFormData] = useState({
+    ongoingLoan: "",
     landArea: "",
+    yearlyIncome: "",
+    location: "",
     cropType: "",
     previousYield: "",
     expectedYield: "",
@@ -21,7 +24,6 @@ function ApplyLoan() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Replace with API call to submit the loan application
     console.log("Loan Application Submitted:", formData);
   };
 
@@ -30,10 +32,30 @@ function ApplyLoan() {
       <div className="w-full max-w-2xl p-8 bg-white shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold mb-6 text-center">Apply for Loan</h2>
         <p className="text-gray-600 mb-8 text-center">
-          Enter your land details, crop history, and expected yield to apply for a loan.
+          Enter your details to apply for a loan.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Ongoing Loan */}
+            <div className="mb-4">
+              <label htmlFor="ongoingLoan" className="block text-gray-700 font-medium mb-2">
+                Ongoing Loan (Yes/No)
+              </label>
+              <select
+                id="ongoingLoan"
+                name="ongoingLoan"
+                value={formData.ongoingLoan}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+
+            {/* Land Area */}
             <div className="mb-4">
               <label htmlFor="landArea" className="block text-gray-700 font-medium mb-2">
                 Land Area (in acres)
@@ -49,6 +71,42 @@ function ApplyLoan() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+
+            {/* Yearly Income */}
+            <div className="mb-4">
+              <label htmlFor="yearlyIncome" className="block text-gray-700 font-medium mb-2">
+                Yearly Income ($)
+              </label>
+              <input
+                type="number"
+                id="yearlyIncome"
+                name="yearlyIncome"
+                value={formData.yearlyIncome}
+                onChange={handleChange}
+                placeholder="e.g., 20000"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            {/* Location */}
+            <div className="mb-4">
+              <label htmlFor="location" className="block text-gray-700 font-medium mb-2">
+                Location
+              </label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                value={formData.location}
+                onChange={handleChange}
+                placeholder="e.g., Ahmedabad"
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            {/* Crop Type */}
             <div className="mb-4">
               <label htmlFor="cropType" className="block text-gray-700 font-medium mb-2">
                 Crop Type
@@ -64,6 +122,8 @@ function ApplyLoan() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+
+            {/* Previous Yield */}
             <div className="mb-4">
               <label htmlFor="previousYield" className="block text-gray-700 font-medium mb-2">
                 Previous Yield (in tons)
@@ -79,6 +139,8 @@ function ApplyLoan() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+
+            {/* Expected Yield */}
             <div className="mb-4">
               <label htmlFor="expectedYield" className="block text-gray-700 font-medium mb-2">
                 Expected Yield (in tons)
@@ -94,6 +156,8 @@ function ApplyLoan() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+
+            {/* Irrigation Type */}
             <div className="mb-4">
               <label htmlFor="irrigationType" className="block text-gray-700 font-medium mb-2">
                 Irrigation Type
@@ -113,6 +177,8 @@ function ApplyLoan() {
                 <option value="none">None</option>
               </select>
             </div>
+
+            {/* Soil Condition */}
             <div className="mb-4">
               <label htmlFor="soilCondition" className="block text-gray-700 font-medium mb-2">
                 Soil Condition
@@ -131,6 +197,8 @@ function ApplyLoan() {
                 <option value="poor">Poor</option>
               </select>
             </div>
+
+            {/* Loan Amount */}
             <div className="mb-4">
               <label htmlFor="loanAmount" className="block text-gray-700 font-medium mb-2">
                 Loan Amount Requested ($)
@@ -147,20 +215,11 @@ function ApplyLoan() {
               />
             </div>
           </div>
-          <div className="mt-6">
-            <button
-              type="submit"
-              className="w-full bg-[#213547] text-white py-2 rounded-md hover:bg-[#89c1f1] transition duration-300"
-            >
-              Submit Application
-            </button>
-          </div>
+
+          <button type="submit" className="w-full bg-[#213547] text-white py-2 rounded-md hover:bg-[#89c1f1] transition duration-300">
+            Submit Application
+          </button>
         </form>
-        <div className="mt-4 text-center">
-          <Link to="/farmer-dashboard" className="text-blue-600 hover:underline">
-            ← Back to Dashboard
-          </Link>
-        </div>
       </div>
     </div>
   );
